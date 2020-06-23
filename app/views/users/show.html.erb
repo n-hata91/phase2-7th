@@ -34,9 +34,10 @@
       </tbody>
     </table>
 
-  <h2>Your Map</h2>
-  <div id="map"></div>
-  </div>
+  <% unless current_user.id != @user.id %>
+    <h2>Your Map</h2>
+    <div id="map"></div>
+  <% end %>
   <style>
     #map { height: 400px;}
   </style>
