@@ -52,6 +52,5 @@
                   map: map,
                 });
     }
-initMap();
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE1SX4zUE9KZkYPgsfyD4U_VccgXtdbZA&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap" async defer></script>
