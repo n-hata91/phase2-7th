@@ -17,6 +17,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    user_address = @user.address_city + @user.address_street
+    results = Geocoder.search(user_address)
+    @latlng = results.first.coordinates
     @books = Book.where(user_id: params[:id])
     @book = Book.new
   end

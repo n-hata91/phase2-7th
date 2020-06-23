@@ -33,4 +33,25 @@
       <% end %>
       </tbody>
     </table>
+
+  <h2>Your Map</h2>
+  <div id="map"></div>
   </div>
+  <style>
+    #map { height: 400px;}
+  </style>
+  <script>
+    function initMap() {
+      let address = { lat: <%= @latlng[0] %>, lng: <%= @latlng[1] %> }
+      let map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: address
+      });
+      let marker = new google.maps.Marker({
+                  position:address,
+                  map: map,
+                });
+    }
+initMap();
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE1SX4zUE9KZkYPgsfyD4U_VccgXtdbZA&callback=initMap" async defer></script>
